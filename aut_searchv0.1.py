@@ -1,7 +1,5 @@
 from pywinauto.application import Application
 from time import sleep
-#Menu(owner_ctrl, menuhandle, )
-
 
 def main():
     not_connected = True
@@ -11,8 +9,6 @@ def main():
             app = Application(backend="uia").connect(path="ExpressVPN",timeout=10)
 
             main_dlg=app.window(title='ExpressVPN')
-
-            #main_dlg.print_control_identifiers(filename="expressvpn_dis.txt")
 
             i=0
             not_connected = main_dlg.Static0.window_text() in ['Not connected', 'Unable to Connect']
